@@ -1,0 +1,634 @@
+/* 
+    This is a CSS comment. Please add your name to this file below:
+    
+    NAME: 
+*/
+/* -------------------------------------------------- */
+/* 
+    The code below is called the CSS reset. We will learn more 
+    about this in a future module, for now you can ignore this 
+    code and leave it as-is 
+*/
+/* -------------------------------------------------- */
+
+/* 
+    http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	margin-block-start: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* --------------BEGIN GLOBAL STYLES----------------- */
+/* -------------------------------------------------- */
+/*  
+    THESE STYLES HAVE BEEN WRITTEN FOR YOU. WE WILL 
+    FOCUS ON ADDING NEW STYLES TO SPECIFIC ELEMENTS 
+    BELOW THESE, LOOK FOR THE COMMENTS THAT SAY TO DO 
+*/
+/* -------------------------------------------------- */
+:root{
+    /* COLOR THEME FROM ADOBE COLOR */
+    --dk-blue: #010326;
+    --dk-teal: #011526;
+    --lt-blue: #CEE4F2;
+    --teal: #436573;
+    --dk-gray: #0D0D0D;
+
+
+    --dk-blue-rgba: rgb(1 3 38 / 50%);
+    --dk-teal-rgba: rgb(1 21 38 / 50%);
+    --lt-blue-rgba: rgb(206 228 242 / 50%);
+    --teal-rgba: rgb(67 101 115 / 50%);
+    --dk-gray-rgba: rgb(13 13 13 / 50%);
+
+    --white: #fff;
+    --light-gray: #eaeaea;
+    --med-gray: #555;
+    
+    /* BOX SHADOW VARIABLES HERE */
+    --box-shadow-sm: -3px 3px 7px var(--med-gray);
+    --box-shadow-lg: -6px 6px 10px var(--med-gray);
+
+    /* FILTER SHADOWS HERE */
+    --filter-shadow-sm: drop-shadow(-3px 3px 7px var(--med-gray));
+    --filter-shadow-lg: drop-shadow(-6px 6px 10px var(--med-gray));
+}
+
+body{
+    background-color: var(--light-gray);
+    font-family: Raleway, sans-serif;
+    line-height: 1.4;
+    color: var(--dk-gray);
+    box-sizing: border-box;
+}
+
+header{
+    padding: 1em;
+    width: calc(100% - 2rem);
+    max-width: calc(1200px - 2rem);
+    margin: 0 auto 2rem auto;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow-sm);
+}
+
+h1, h2{
+    font-weight: bold;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0.25rem auto;
+}
+
+nav li{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+nav a{
+    display: block;
+    padding: 0.5rem;
+    width: 100%;
+    text-decoration: none;
+    background-color: var(--teal);
+    color: var(--white);
+    text-align: center;
+    box-shadow: var(--box-shadow-lg);
+}
+
+nav a:hover{
+    background-color: var(--dk-teal);
+    color: var(--white);
+    box-shadow: var(--box-shadow-sm);
+}
+
+a{
+    color: var(--dk-blue);
+    font-weight: 600;
+}
+
+a:hover{
+    color: var(--teal);
+}
+
+main{
+    width: calc(100% - 2rem);
+    max-width: calc(1200px - 2rem);
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+}
+
+h2{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+section{
+    display: block;
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow-sm);
+}
+
+p{
+    max-width: 65ch;
+    margin: 0 auto;
+}
+
+section > p:first-of-type, main > p{
+    padding: 1rem 0; 
+    max-width: 65ch;
+    margin: 0 auto;
+}
+
+section > p:first-of-type{
+    border-bottom: 4px solid var(--dk-teal-rgba);
+    margin-bottom: 1rem;
+}
+
+main > p{
+    grid-column: 1/-1;
+    padding: 1rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow-sm);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    border: 4px solid var(--teal-rgba);
+}
+
+strong{
+    font-weight: 600;
+    background-color: var(--lt-blue);
+}
+
+code{
+    font-family: monospace;
+    font-size: 1.25rem;
+}
+
+dt{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.25rem 0 0.5rem 1rem;
+}
+
+dd{
+    margin: 0.25rem 0 0.5rem 2rem;
+}
+
+dd code, p code, li code{
+    font-size: 1.1rem;
+}
+
+p code, li code{
+    background-color: var(--dk-blue);
+    color: var(--light-gray);
+}
+
+#section1 img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#section4 p:first-of-type{
+    border-bottom: none;
+    margin: 0;
+}
+
+#section4 ul{
+    border-bottom: 4px solid var(--dk-teal-rgba);
+    margin-bottom: 1rem;
+    padding: 0 0 1rem 0.5rem;
+}
+
+#section4 li{
+    display: block;
+    padding: 0.5rem 0;
+}
+
+#section4 li::before{
+    content: 
+}
+
+#section5 p:last-of-type{
+    margin-top: 1rem;
+}
+
+#section6 div{
+    width: 300px;
+    height: 200px;
+    margin: 1rem auto;
+}
+
+#section7 div{
+    width: 100%;
+    height: 100px;
+    margin: 1rem auto;
+}
+
+#btt{
+    display: block;
+    height: 50px;
+    grid-column: 1/-1;
+    justify-self: end;
+}  
+
+#btt svg{
+    width: 50px;
+    fill: var(--dk-teal);
+    filter: var(--filter-shadow-lg);
+}
+
+#btt:hover svg{
+    fill: var(--dk-teal-rgba);
+    filter: var(--filter-shadow-sm);
+}
+
+footer{
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--white);
+    width: calc(100% - 2rem);
+    max-width: calc(1200px - 2rem);
+    margin: 0 auto;
+    box-shadow: var(--box-shadow-sm);
+}
+
+/* --------------BEGIN ACTIVITY STYLES----------------- */
+/* -------------------------------------------------- */
+/*  
+    FOLLOW ALONG IN CLASS AND ADD YOUR STYLES AS INSTRUCTED BELOW
+*/
+/* -------------------------------------------------- */
+
+/* ------------- SECTION 2 STYLES ---------------- */
+/* Practicing the box model & seeing it in action */
+/* content, padding, borders, margin, dev tools, inline, & block elements */
+
+/* For both links in the section */
+/* 
+    TO DO: add styles to both links in this section that will:
+        - make these links display as block-level elements
+        - remove the underline
+        - align the text to the center
+        - make the font display at 1.1rem
+        - make the text bold
+        - tell these to be 50% wide in the container
+        - add the large box shadow
+*/
+/* ADD SELECTOR AND STYLES HERE */
+
+/* For the first link in this section: */
+#section2 a:first-of-type{
+    background-color: var(--lt-blue);
+    color: var(--dk-gray);
+    padding: 16px;
+    border: 4px solid var(--dk-blue);
+    margin: 1rem auto;
+    border-radius: 0 24px 24px 0;
+}
+
+/* For the paragraph with placeholder text */
+#section2 p:nth-of-type(2){
+    margin: 1rem 0;
+}
+
+/* For the last link in this section */
+#section2 a:last-of-type{
+    background-color: var(--dk-blue);
+    color: var(--white);
+    padding: 8px;
+    border: 6px solid var(--lt-blue);
+    margin: 1rem auto 2rem auto;
+    border-radius: 8px;
+}
+
+/* For the last paragraph in the section */
+/* 
+    TO DO: add styles to the last paragraph in this section that will:
+        - make the background the teal-rgba color
+        - add a 4 pixel dark gray border that is dashed
+        - add margin:
+            - top: 16px
+            - right: 60px
+            - bottom: 32px
+            - left: 8px
+        - add padding: 
+            - top: 32px
+            - right: 8px
+            - bottom: 16px
+            - left: 60px
+*/
+#section2 div > p:last-of-type{
+    
+}
+
+ /* For the div wrapped around that paragraph to show the space its taking up within its container */
+#section2 div{
+    border: 1px solid var(--teal);
+}
+
+/* To change the styles on each of those links when you're hovering over them with a mouse */
+/* 
+    TO DO: add styles to the first link on hover in this section that will:
+        - make the background the dk-blue color
+        - make the text white
+        - change the color of the border to the lt-blue color
+        - add the small box shadow, using the variable in the root
+*/
+#section2 a:first-of-type:hover{
+
+}
+
+#section2 a:last-of-type:hover{
+    background-color: var(--lt-blue);
+    color: var(--dk-gray);
+    border-color: var(--dk-blue);
+    box-shadow: var(--box-shadow-sm);
+}
+
+
+/* ------------- SECTION 3 STYLES ---------------- */
+/* Sizing with width and height */
+
+/* For the corgi graphic */
+/* 
+    TO DO: add styles to the image in this section that will:
+        - turn this into a block-level element
+        - make this display at 200px wide
+        - set the height to auto
+        - add margin to center this element
+        - add the small filter drop shadow from the CSS variables in the root
+*/
+#section3 img{
+    
+}
+
+#section3 div::before{
+    content: "";
+    display: block;
+    width: 75px;
+    height: 75px;
+    background-color: var(--teal);
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    top: 12px;
+    left: 12px;
+}
+
+/* For the div in the section, let's make a circle. It will be like a toy ball for our corgi */
+#section3 div{
+    height: 100px;
+    width: 100px;
+    background-color: var(--dk-blue);
+    border-radius: 50%;
+    margin: 0 0 16px 32px;
+    position: relative;
+    z-index: 0;
+    box-shadow: var(--box-shadow-sm);
+}
+
+/* 
+    TO DO: add styles to the after pseudo-element on the div in this section that will:
+        - add content (empty string)
+        - make this display as a block-level element
+        - make this 50px wide
+        - make this 50px tall
+        - make the background the lt-blue color
+        - turn this square div into a circle
+        - set the position to relative
+        - give this a z-index of 2
+        - move this up from its original location by 50px
+        - move this to the right from its original location by 25px
+*/
+#section3 div::after{
+}
+
+
+/* ------------- SECTION 4 STYLES ---------------- */
+/* Margin collapse and centering with margin */
+
+/* For the first paragraph of placeholder text */
+#section4 p:nth-of-type(3){
+    margin: 2rem 0;
+}
+
+/* For the second paragraph */
+/* 
+    TO DO: add styles to the last paragraph in this section that will:
+        - add margin:
+            - top: 1rem
+            - right: 0
+            - bottom: 1rem
+            - left: 0
+*/
+#section4 p:last-of-type{
+
+}
+
+/* ------------- SECTION 5 STYLES ---------------- */
+/* Background image default behavior */
+
+/* Add the image to the div in this section. The puppy-photo image is square and was edited to be 100px by 100px */
+#bkgrnd-img-default{
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background-image: url("images/puppy-photo.jpg");
+}
+
+/* ------------- SECTION 6 STYLES ---------------- */
+/* Background image control alignment and repeat */
+
+/* For the first div, let's add the image but tell it not to repeat */
+#bg-img-1{
+    background-color: var(--lt-blue);
+    background-image: url("images/puppy-photo.jpg");
+    background-repeat: no-repeat;
+}
+
+/* For the second div, let's align the image to the right and add the dark gray as the background color */
+#bg-img-2{
+    background: var(--dk-gray) right no-repeat url("images/puppy-photo.jpg");
+}
+
+/* For the third div, let's include the a background color, allow the image to tile, but center the tiling in the container */
+/* 
+    TO DO: add styles to the div with an ID of bg-img-3 in this section that will:
+        - add the lt-blue color to the background
+        - center the image pattern in the container
+        - add the puppy-photo as a repeating background to the container
+*/
+#bg-img-3{
+    
+}
+
+/* For the fourth div, let's style this like the second div, but let's change the height of the div to 100px, so it fits the height of the image. It will make it look like the image and div are the same height */
+#section6 #bg-img-4{
+    height: 100px;
+    background: var(--lt-blue) right no-repeat url("images/puppy-photo.jpg");
+}
+
+/* For the last div, let's do the same thing, but with the image on the left */
+#section6 #bg-img-5{
+    height: 100px;
+    background: var(--dk-gray) no-repeat url("images/puppy-photo.jpg");
+}
+
+
+/* ------------- SECTION 7 STYLES ---------------- */
+/* Background patterns with images and CSS */
+
+/* For the first div, let's add the pattern from the images folder called wood, it is from Transparent Textures. Include the lt-gray background color as well */
+/* 
+    TO DO: add styles to the div with an ID of pattern1 in this section that will:
+        - set the background color to light-gray
+        - scale the background image to 110% 
+        - add the wood background texture from the images folder
+*/
+#pattern1{
+    
+}
+
+/* For the second div, the pattern is from from Hero Pattern. These actually give you SVG code to paste into your CSS */
+#pattern2{
+    background-color: (var(--lt-blue));
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='church-on-sunday' fill='%23436573' fill-opacity='0.23'%3E%3Cpath d='M77.17 0H80v2.83l-.1.1A39.9 39.9 0 0 1 74.64 20a39.9 39.9 0 0 1 5.24 17.06l.11.11v2.89c-.01 6.9-1.8 13.79-5.35 19.94A39.96 39.96 0 0 1 80 79.94V80h-2.83L66.84 69.66a39.83 39.83 0 0 1-24.1 10.25l.09.09h-5.66l.1-.1c-8.7-.58-17.22-4-24.1-10.23L2.82 80H0V79.94c.01-6.9 1.8-13.8 5.35-19.94A39.96 39.96 0 0 1 0 40.06V37.17l.1-.1A39.9 39.9 0 0 1 5.36 20 39.9 39.9 0 0 1 .1 2.94L0 2.83V0h2.83l-.1.1a39.83 39.83 0 0 1 24.1 10.24L37.18 0H40c0 6.92-1.78 13.83-5.35 20A39.96 39.96 0 0 1 40 40c0-6.92 1.78-13.83 5.35-20A39.96 39.96 0 0 1 40 0h2.83l10.33 10.34A39.83 39.83 0 0 1 77.26.09L77.17 0zm.77 77.94c-.3-5.52-1.8-11-4.49-16a40.18 40.18 0 0 1-5.17 6.34l9.66 9.66zm-12.52-9.7l-6.83-6.83-5.46 5.46-1.41 1.41-9.66 9.66c8.4-.45 16.69-3.68 23.36-9.7zm-23.07 6.58l7.99-7.98a40.05 40.05 0 0 1-3.79-4.9 37.88 37.88 0 0 0-4.2 12.88zM47.68 60a37.98 37.98 0 0 0 4.07 5.42L57.17 60l-5.42-5.42A38 38 0 0 0 47.68 60zm2.66-6.84a40.06 40.06 0 0 0-3.79 4.9 37.88 37.88 0 0 1-4.2-12.88l7.99 7.98zm1.38-1.44l1.41 1.41 5.46 5.46 6.83-6.84a37.85 37.85 0 0 0-23.36-9.7l9.66 9.67zM60 60l6.87 6.87A38.1 38.1 0 0 0 72.32 60a38.11 38.11 0 0 0-5.45-6.87L60 60zm-14.65 0a39.9 39.9 0 0 0-5.24 17.06l-.11.11-.1-.1A39.9 39.9 0 0 0 34.64 60a39.9 39.9 0 0 0 5.24-17.06l.11-.11.1.1A39.9 39.9 0 0 0 45.36 60zm9.23-48.25a37.85 37.85 0 0 1 23.36-9.7l-9.66 9.67-1.41 1.41-5.46 5.46-6.83-6.84zm13.67 13.67L62.83 20l5.42-5.42A38 38 0 0 1 72.32 20a37.98 37.98 0 0 1-4.07 5.42zm5.2-3.47a40.05 40.05 0 0 1-3.79 4.89l7.99 7.98c-.61-4.45-2.01-8.82-4.2-12.87zm-6.58 4.92l1.41 1.41 9.66 9.66a37.85 37.85 0 0 1-23.36-9.7l6.83-6.83 5.46 5.46zM53.13 13.13L60 20l-6.87 6.87A38.11 38.11 0 0 1 47.68 20a38.1 38.1 0 0 1 5.45-6.87zm-1.41-1.41l-9.66-9.66c.3 5.52 1.8 11 4.49 16a40.18 40.18 0 0 1 5.17-6.34zm-9.66 26.22c.3-5.52 1.8-11 4.49-16a40.18 40.18 0 0 0 5.17 6.34l-9.66 9.66zm26.22 13.78l9.66-9.66c-.3 5.52-1.8 11-4.49 16a40.18 40.18 0 0 0-5.17-6.34zm8.98-11.81L66.84 50.34a39.83 39.83 0 0 0-24.1-10.25l10.42-10.43a39.83 39.83 0 0 0 24.1 10.25zm-7.6-26.75a40.06 40.06 0 0 1 3.79 4.9 37.88 37.88 0 0 0 4.2-12.88l-7.99 7.98zm-31.72 28.9c-8.4.45-16.69 3.68-23.36 9.7l6.83 6.83 5.46-5.46 1.41-1.41 9.66-9.66zM22.83 60l5.42 5.42c1.54-1.7 2.9-3.52 4.07-5.42a38 38 0 0 0-4.07-5.42L22.83 60zm5.45 8.28l-1.41-1.41-5.46-5.46-6.83 6.84a37.85 37.85 0 0 0 23.36 9.7l-9.66-9.67zm9.37 6.54l-7.99-7.98a40.05 40.05 0 0 0 3.79-4.9 37.88 37.88 0 0 1 4.2 12.88zM20 60l-6.87-6.87A38.11 38.11 0 0 0 7.68 60a38.11 38.11 0 0 0 5.45 6.87L20 60zm17.26-19.9L26.84 29.65a39.83 39.83 0 0 1-24.1 10.25l10.42 10.43a39.83 39.83 0 0 1 24.1-10.25zm-35.2 1.96l9.66 9.66a40.18 40.18 0 0 0-5.17 6.33c-2.7-5-4.2-10.47-4.5-16zm4.49 19.89c-2.7 5-4.2 10.47-4.5 16l9.67-9.67a40.18 40.18 0 0 1-5.17-6.33zm31.1-16.77c-.61 4.45-2.01 8.82-4.2 12.87a40.06 40.06 0 0 0-3.79-4.89l7.99-7.98zm-4.2-23.23c2.7 5 4.2 10.47 4.5 16l-9.67-9.67c1.97-1.97 3.7-4.1 5.17-6.33zm-14.86-.54l6.83 6.84a37.85 37.85 0 0 1-23.36 9.7l9.66-9.67 1.41-1.41 5.46-5.46zm-8.25 5.43l-7.99 7.98c.61-4.45 2.01-8.82 4.2-12.87a40.04 40.04 0 0 0 3.79 4.89zm1.41-1.42A37.99 37.99 0 0 1 7.68 20a38 38 0 0 1 4.07-5.42L17.17 20l-5.42 5.42zm-5.2-7.37a40.04 40.04 0 0 1 3.79-4.89L2.35 5.18c.61 4.45 2.01 8.82 4.2 12.87zm6.58-4.92l-1.41-1.41-9.66-9.66a37.85 37.85 0 0 1 23.36 9.7l-6.83 6.83-5.46-5.46zm13.74 13.74L20 20l6.87-6.87A38.1 38.1 0 0 1 32.32 20a38.1 38.1 0 0 1-5.45 6.87zm6.58-8.82a40.18 40.18 0 0 0-5.17-6.33l9.66-9.66c-.3 5.52-1.8 11-4.49 16z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* For the third div, let's add the pattern called double-bubble. It's from Subtle Patterns and is in a web-friendly image format called webp */
+#pattern3{
+    background: var(--teal) url("images/overlapping-tiles.png");
+}
+
+/* The fourth div is displaying some CSS that creates a houndstooth pattern, from the CSS3 Patterns gallery */
+#pattern4{
+    background:
+    linear-gradient(-45deg, white 25%, transparent 25%, transparent 75%, black 75%, black) 0 0,
+    linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, white 75%, white) 1em 1em,
+    linear-gradient(45deg, black 17%, transparent 17%, transparent 25%, black 25%, black 36%, transparent 36%, transparent 64%, black 64%, black 75%, transparent 75%, transparent 83%, black 83%) 1em 1em;
+    background-color: white;
+    background-size: 2em 2em;
+}
+
+/* The fifth div is displaying some CSS that creates a  polka-dot pattern, from the CSS Background Patterns website */
+#pattern5{
+    background-color: #011526;
+    opacity: 1;
+    background-image: radial-gradient(#436573 0.9500000000000001px, #011526 0.9500000000000001px);
+    background-size: 19px 19px;
+}
+
+
+/* ------------- SECTION 8 STYLES ---------------- */
+/* Floating content with CSS */
+
+/* Let's tell our images to float to the left. Remember, they'll sort of pile up next to each other in the container, but only if they're narrow enough to fit! */
+/* 
+    TO DO: add styles to the image with the ID of corgi in this section that will:
+        - float this image to the left
+        - add 1 rem of margin to the right of the image
+*/
+#corgi{
+    margin-right: 1rem;
+    float: left;
+}
+
+#section8 p:last-of-type{
+    margin-top: 0.5rem;
+}
+
+/* 
+    TO DO: add styles to the image with an ID of dog-house in this section that will:
+        - float the image to the right
+*/
+#dog-house{
+    
+}
+
+/* When you use floats, you have to be sure to clear them so that the rest of your page after the floats displays normally. Let's use the display section to clear the floats (because it is the next tag outside of our container in the HTML) */
+/* 
+    TO DO: add styles to the display section that will:
+        - clear any floats
+*/
+#section9{
+    
+}
+
+/* ------------- SECTION 9 STYLES ---------------- */
+
+
+
+@media screen and (min-width: 400px){
+    nav ul{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 700px){
+    header{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        align-items: center;
+    }
+}
